@@ -4,8 +4,13 @@ import { FaHome, FaInfoCircle, FaBook, FaTools, FaRobot, FaEnvelope } from 'reac
 
 const NavContainer = styled.nav`
   background: ${props => props.theme.colors.white};
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid ${props => props.theme.colors.lightGray};
   padding: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  box-sizing: border-box;
 `;
 
 const NavList = styled.ul`
@@ -28,26 +33,26 @@ const StyledNavLink = styled(NavLink)`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.25rem;
   color: ${props => props.theme.colors.text};
   text-decoration: none;
-  transition: all 0.3s ease;
-  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 400;
+  border-bottom: 2px solid transparent;
 
   &:hover {
-    background-color: ${props => props.theme.colors.lightGray};
     color: ${props => props.theme.colors.primary};
   }
 
   &.active {
     color: ${props => props.theme.colors.primary};
     border-bottom-color: ${props => props.theme.colors.primary};
-    background-color: rgba(30, 136, 229, 0.1);
   }
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    padding: 0.75rem 1rem;
-    justify-content: center;
+    padding: 0.625rem 0.75rem;
+    font-size: 0.8125rem;
   }
 `;
 

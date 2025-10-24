@@ -4,9 +4,11 @@ import { FaHeart } from 'react-icons/fa';
 const FooterContainer = styled.footer`
   background: ${props => props.theme.colors.text};
   color: ${props => props.theme.colors.white};
-  padding: 2rem 1rem;
+  padding: 2rem;
   text-align: center;
   margin-top: auto;
+  width: 100vw;
+  box-sizing: border-box;
 `;
 
 const FooterContent = styled.div`
@@ -32,7 +34,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <FooterText>
-          © 2024 Digital Education and Computational Thinking.
+          © 2025 Digital Education and Computational Thinking.
           Made with <HeartIcon /> for the education of the future.
         </FooterText>
       </FooterContent>

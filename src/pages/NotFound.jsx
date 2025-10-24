@@ -5,48 +5,62 @@ import { FaHome, FaSearch } from 'react-icons/fa';
 
 const NotFoundContainer = styled.div`
   text-align: center;
-  padding: 4rem 1rem;
-  max-width: 600px;
-  margin: 0 auto;
+  padding: 5rem;
+  width: 100vw;
+  margin: 0;
+  box-sizing: border-box;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 3rem 1rem;
+  }
 `;
 
 const ErrorCode = styled(motion.h1)`
-  font-size: 6rem;
-  color: ${props => props.theme.colors.primary};
-  margin-bottom: 1rem;
+  font-size: 5rem;
+  font-weight: 600;
+  color: ${props => props.theme.colors.text};
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 `;
 
 const Title = styled(motion.h2)`
   color: ${props => props.theme.colors.text};
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 `;
 
 const Description = styled(motion.p)`
   color: ${props => props.theme.colors.text};
-  margin-bottom: 2rem;
-  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  line-height: 1.5;
+  opacity: 0.8;
+  font-size: 1rem;
 `;
 
 const HomeButton = styled(motion(Link))`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, ${props => props.theme.colors.primary}, ${props => props.theme.colors.secondary});
+  background: linear-gradient(135deg, ${props => props.theme.colors.accent}, ${props => props.theme.colors.playful});
   color: ${props => props.theme.colors.white};
   padding: 1rem 2rem;
-  border-radius: 50px;
+  border-radius: 30px;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 20px rgba(69, 189, 209, 0.3);
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(30, 136, 229, 0.3);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(69, 189, 209, 0.4);
+    background: linear-gradient(135deg, ${props => props.theme.colors.playful}, ${props => props.theme.colors.accent});
   }
 `;
 

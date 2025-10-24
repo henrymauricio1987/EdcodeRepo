@@ -6,22 +6,29 @@ import Card from '../../shared/Card';
 import { resources } from '../../data';
 
 const Container = styled.section`
-  padding: 3rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 4rem;
+  width: 100vw;
+  margin: 0;
+  box-sizing: border-box;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 3rem 1rem;
+  }
 `;
 
 const Title = styled(motion.h2)`
-  color: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.text};
   text-align: center;
   margin-bottom: 3rem;
+  font-size: 2rem;
+  font-weight: 500;
 `;
 
 const FilterContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
-  gap: 1rem;
+  margin-bottom: 3rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
@@ -31,26 +38,28 @@ const FilterContainer = styled.div`
 `;
 
 const FilterButton = styled.button`
-  background: ${props => props.active ? props.theme.colors.primary : props.theme.colors.lightGray};
+  background: ${props => props.active ? props.theme.colors.primary : props.theme.colors.white};
   color: ${props => props.active ? props.theme.colors.white : props.theme.colors.text};
-  border: none;
+  border: 1px solid ${props => props.active ? props.theme.colors.primary : props.theme.colors.lightGray};
   padding: 0.5rem 1rem;
-  border-radius: 25px;
+  border-radius: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.3s ease;
+  font-size: 0.875rem;
+  font-weight: 400;
+  transition: all 0.2s ease;
 
   &:hover {
-    background: ${props => props.active ? props.theme.colors.primary : props.theme.colors.primary};
-    color: ${props => props.theme.colors.white};
+    background: ${props => props.active ? props.theme.colors.primary : props.theme.colors.lightGray};
+    border-color: ${props => props.theme.colors.primary};
   }
 `;
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
@@ -67,12 +76,13 @@ const ResourceCard = styled(Card)`
 
 const ResourceCategory = styled.span`
   display: inline-block;
-  background: ${props => props.theme.colors.secondary};
+  background: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.white};
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.75rem;
   border-radius: 12px;
-  font-size: 0.8rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
   align-self: flex-start;
 `;
 
@@ -82,7 +92,8 @@ const ResourceLink = styled.a`
   gap: 0.5rem;
   color: ${props => props.theme.colors.primary};
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 0.9375rem;
   margin-top: auto;
   padding-top: 1rem;
 

@@ -16,10 +16,22 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <div style={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100vw',
+        margin: 0,
+        padding: 0
+      }}>
         <Header />
         <NavBar />
-        <main style={{ flex: 1 }}>
+        <main style={{
+          flex: 1,
+          width: '100vw',
+          margin: 0,
+          padding: 0
+        }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

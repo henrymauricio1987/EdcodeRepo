@@ -6,20 +6,33 @@ import { FaEnvelope, FaUser, FaPaperPlane } from 'react-icons/fa';
 const ContactContainer = styled.div`
   max-width: 600px;
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 4rem;
+  width: 100vw;
+  box-sizing: border-box;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 3rem 1rem;
+  }
 `;
 
 const Title = styled(motion.h1)`
-  color: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.text};
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  font-weight: 500;
 `;
 
 const Form = styled(motion.form)`
   background: ${props => props.theme.colors.white};
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid ${props => props.theme.colors.lightGray};
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 1.5rem;
+  }
 `;
 
 const FormGroup = styled.div`
@@ -64,23 +77,25 @@ const TextArea = styled.textarea`
 `;
 
 const SubmitButton = styled(motion.button)`
-  background: linear-gradient(135deg, ${props => props.theme.colors.primary}, ${props => props.theme.colors.secondary});
+  background: linear-gradient(135deg, ${props => props.theme.colors.secondary}, ${props => props.theme.colors.accent});
   color: ${props => props.theme.colors.white};
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 50px;
+  border: 2px solid transparent;
+  padding: 1rem 2rem;
+  border-radius: 30px;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(78, 205, 196, 0.3);
 
   &:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(30, 136, 229, 0.3);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(78, 205, 196, 0.4);
+    background: linear-gradient(135deg, ${props => props.theme.colors.accent}, ${props => props.theme.colors.secondary});
   }
 
   &:disabled {

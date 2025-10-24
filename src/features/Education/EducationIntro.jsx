@@ -2,22 +2,31 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const IntroContainer = styled.section`
-  padding: 3rem 1rem;
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 4rem;
+  width: 100vw;
+  margin: 0;
+  box-sizing: border-box;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 3rem 1rem;
+  }
 `;
 
 const IntroTitle = styled(motion.h2)`
-  color: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.text};
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  font-weight: 500;
 `;
 
 const IntroText = styled(motion.p)`
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: left;
+  color: ${props => props.theme.colors.text};
+  opacity: 0.9;
 `;
 
 const EducationIntro = () => {
