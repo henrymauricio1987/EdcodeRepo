@@ -10,7 +10,8 @@ const CardContainer = styled(motion.div)`
   cursor: pointer;
   transition: all 0.3s ease;
   border: 2px solid transparent;
-  background: linear-gradient(135deg, ${props => props.theme.colors.white} 0%, ${props => props.theme.colors.lightGray} 100%);
+background: ${props => props.theme.colors.white} !important;
+
   position: relative;
   overflow: hidden;
 
@@ -21,7 +22,8 @@ const CardContainer = styled(motion.div)`
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, ${props => props.theme.colors.primary}, ${props => props.theme.colors.secondary}, ${props => props.theme.colors.accent});
+background: ${props => props.theme.colors.white} !important;
+
     border-radius: 16px 16px 0 0;
   }
 

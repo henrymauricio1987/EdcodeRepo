@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaArrowRight, FaBookOpen, FaTools, FaRobot } from 'react-icons/fa';
+import { FaArrowRight, FaBookOpen, FaTools, FaRobot, FaDesktop } from 'react-icons/fa';
 
 const HomeContainer = styled.div`
   text-align: center;
@@ -44,8 +44,8 @@ const CTAButton = styled(motion(Link))`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, ${props => props.theme.colors.primary}, ${props => props.theme.colors.secondary});
-  color: ${props => props.theme.colors.white};
+  background: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.text};
   padding: 1rem 2rem;
   border-radius: 30px;
   text-decoration: none;
@@ -53,12 +53,12 @@ const CTAButton = styled(motion(Link))`
   font-size: 1rem;
   transition: all 0.3s ease;
   border: 2px solid transparent;
-  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 168, 232, 0.3);
 
   &:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
-    background: linear-gradient(135deg, ${props => props.theme.colors.secondary}, ${props => props.theme.colors.primary});
+    box-shadow: 0 8px 30px rgba(0, 168, 232, 0.4);
+    background: ${props => props.theme.colors.accent};
   }
 `;
 
@@ -82,7 +82,6 @@ const FeatureCard = styled(motion.div)`
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   border: 2px solid transparent;
-  background: linear-gradient(135deg, ${props => props.theme.colors.white} 0%, ${props => props.theme.colors.lightGray} 100%);
   position: relative;
   overflow: hidden;
 
@@ -93,7 +92,7 @@ const FeatureCard = styled(motion.div)`
     left: 0;
     right: 0;
     height: 6px;
-    background: linear-gradient(90deg, ${props => props.theme.colors.primary}, ${props => props.theme.colors.secondary}, ${props => props.theme.colors.accent});
+    background: ${props => props.theme.colors.primary};
     border-radius: 20px 20px 0 0;
   }
 
@@ -144,6 +143,11 @@ const features = [
     icon: <FaRobot />,
     title: "Educational Technology",
     description: "Discover how robotics, augmented reality, and app development transform modern learning."
+  },
+  {
+    icon: <FaDesktop />,
+    title: "E-Learning",
+    description: "Learn using the best digital resources, where education comes alive, no boring text, no flat content, just interactive and engaging learning experiences."
   }
 ];
 
@@ -163,7 +167,7 @@ function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        In Manuel Castells' digital era, computational thinking becomes an essential skill
+        In the current digital era, computational thinking becomes an essential skill
         for children and adolescents. Explore modern pedagogical methodologies that integrate technology and education.
       </HeroSubtitle>
 

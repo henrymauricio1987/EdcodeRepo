@@ -33,14 +33,13 @@ const TechGrid = styled.div`
 `;
 
 const TechCard = styled(motion.div)`
-  background: ${props => props.theme.colors.white};
+  background: ${props => props.theme.colors.background};
   padding: 2.5rem;
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: all 0.3s ease;
   border: 2px solid transparent;
-  background: linear-gradient(135deg, ${props => props.theme.colors.white} 0%, ${props => props.theme.colors.lightGray} 100%);
   position: relative;
   overflow: hidden;
 
@@ -51,7 +50,7 @@ const TechCard = styled(motion.div)`
     left: 0;
     right: 0;
     height: 6px;
-    background: linear-gradient(90deg, ${props => props.theme.colors.accent}, ${props => props.theme.colors.playful}, ${props => props.theme.colors.primary});
+    background: ${props => props.theme.colors.primary};
     border-radius: 20px 20px 0 0;
   }
 

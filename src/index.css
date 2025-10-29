@@ -4,8 +4,8 @@
     font-weight: 400;
 
     color-scheme: light dark;
-    color: #1a1a1a;
-    background-color: #f8f9fa;
+    color: #1E2A38;
+    background-color: #F9FAFB;
 
     --primary-color: #00A8E8;
     --secondary-color: #1E2A38;
@@ -17,7 +17,7 @@
     --text-secondary: #1E2A38;
     --background-primary: #F9FAFB;
     --background-secondary: #F9FAFB;
-    --border-color: #e2e8f0;
+    --border-color: #1E2A38;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -88,7 +88,7 @@ button:hover {
     border-color: var(--accent-color);
     color: var(--text-primary);
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 168, 232, 0.3);
+    box-shadow: 0 4px 8px rgba(255, 210, 63, 0.3);
 }
 
 button:focus,

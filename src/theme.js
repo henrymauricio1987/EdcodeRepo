@@ -2,18 +2,18 @@ import { createGlobalStyle } from 'styled-components';
 
 export const theme = {
   colors: {
-    primary: '#0094C9', // Azul principal
-    secondary: '#3498DB', // Azul claro
-    accent: '#2ECC71', // Verde claro
-    playful: '#F1C40F', // Amarillo
-    background: '#FFFFFF',
-    text: '#000000',
-    lightGray: '#2C3E50',
-    white: '#FFFFFF',
-    subtleGray: '#2C3E50',
-    cardBg: '#FFFFFF',
-    gradientStart: '#0094C9',
-    gradientEnd: '#2ECC71',
+    primary: '#00A8E8', // Sky Blue
+    secondary: '#1E2A38', // Dark Navy
+    accent: '#FFD23F', // Bright Yellow
+    success: '#4CAF50', // Fresh Green
+    background: '#F9FAFB', // Soft White
+    text: '#1E2A38', // Dark Navy
+    lightGray: '#1E2A38',
+    white: '#F9FAFB',
+    subtleGray: '#1E2A38',
+    cardBg: '#F9FAFB',
+    gradientStart: '#00A8E8',
+    gradientEnd: '#4CAF50',
   },
   fonts: {
     heading: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",

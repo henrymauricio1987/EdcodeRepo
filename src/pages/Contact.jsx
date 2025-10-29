@@ -93,7 +93,7 @@ const TextArea = styled.textarea`
 `;
 
 const SubmitButton = styled(motion.button)`
-  background: linear-gradient(135deg, ${props => props.theme.colors.secondary}, ${props => props.theme.colors.accent});
+  background: ${props => props.theme.colors.lightGray};
   color: ${props => props.theme.colors.white};
   border: 2px solid transparent;
   padding: 1rem 2rem;
@@ -106,12 +106,12 @@ const SubmitButton = styled(motion.button)`
   gap: 0.5rem;
   margin: 0 auto;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(78, 205, 196, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 
   &:hover:not(:disabled) {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 30px rgba(78, 205, 196, 0.4);
-    background: linear-gradient(135deg, ${props => props.theme.colors.accent}, ${props => props.theme.colors.secondary});
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    background: ${props => props.theme.colors.lightGray};
   }
 
   &:disabled {

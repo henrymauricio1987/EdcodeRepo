@@ -41,7 +41,6 @@ const DynamicCard = styled(motion.div)`
   text-align: center;
   transition: all 0.3s ease;
   border: 2px solid transparent;
-  background: linear-gradient(135deg, ${props => props.theme.colors.white} 0%, ${props => props.theme.colors.lightGray} 100%);
   position: relative;
   overflow: hidden;
 
@@ -52,7 +51,7 @@ const DynamicCard = styled(motion.div)`
     left: 0;
     right: 0;
     height: 6px;
-    background: linear-gradient(90deg, ${props => props.theme.colors.secondary}, ${props => props.theme.colors.accent}, ${props => props.theme.colors.playful});
+    background: ${props => props.theme.colors.primary};
     border-radius: 20px 20px 0 0;
   }
 

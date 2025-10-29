@@ -39,7 +39,6 @@ const TrendCard = styled(motion.div)`
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   border: 2px solid transparent;
-  background: linear-gradient(135deg, ${props => props.theme.colors.white} 0%, ${props => props.theme.colors.lightGray} 100%);
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -51,7 +50,7 @@ const TrendCard = styled(motion.div)`
     left: 0;
     right: 0;
     height: 6px;
-    background: linear-gradient(90deg, ${props => props.theme.colors.playful}, ${props => props.theme.colors.primary}, ${props => props.theme.colors.secondary});
+    background: ${props => props.theme.colors.primary};
     border-radius: 20px 20px 0 0;
   }
 
@@ -89,7 +88,7 @@ const TrendDescription = styled.p`
 `;
 
 const TrendImpact = styled.div`
-  background: ${props => props.theme.colors.lightGray};
+  background: ${props => props.theme.colors.white};
   padding: 1.25rem;
   border-radius: 8px;
   margin-top: 1rem;
@@ -130,10 +129,7 @@ const trends = [
     title: "Artificial Intelligence in Education",
     description: "AI will personalize learning, adapting to each student's pace and style, offering instant feedback and intelligent tutoring.",
     impacts: [
-      "Personalized adaptive learning",
-      "Automatic formative assessment",
-      "24/7 tutorial support",
-      "Predictive performance analysis"
+      "Empowering learning with AI: personalized, interactive, and smarter education for every student."
     ]
   },
   {
@@ -141,10 +137,7 @@ const trends = [
     title: "Connected Learning",
     description: "Artificial neural networks and deep learning will revolutionize how we process and understand complex information.",
     impacts: [
-      "Massive data processing",
-      "Advanced pattern recognition",
-      "Cognitive task automation",
-      "New knowledge paradigms"
+      "Learning together, anytime, anywhere—building knowledge through connection and collaboration."
     ]
   },
   {
@@ -152,10 +145,7 @@ const trends = [
     title: "Cybersecurity and Digital Ethics",
     description: "Training in cybersecurity and digital ethics becomes essential in an increasingly connected and vulnerable world.",
     impacts: [
-      "Data privacy awareness",
-      "Safe online practices",
-      "Ethical thinking in technology",
-      "Digital resilience"
+      "Protecting data, respecting rights—learning to navigate the digital world safely and responsibly."
     ]
   },
   {
@@ -163,10 +153,7 @@ const trends = [
     title: "Educational Metaverse",
     description: "Immersive virtual spaces where learning transcends physical limitations, enabling unlimited educational experiences.",
     impacts: [
-      "Immersive learning experiences",
-      "Real-time global collaboration",
-      "Impossible scenario simulations",
-      "Universal education accessibility"
+      "Step into immersive learning worlds—where education meets virtual reality and innovation."
     ]
   }
 ];
@@ -194,7 +181,7 @@ const FutureTrends = () => {
             <TrendTitle>{trend.title}</TrendTitle>
             <TrendDescription>{trend.description}</TrendDescription>
             <TrendImpact>
-              <ImpactTitle>Impacto Educativo:</ImpactTitle>
+              <ImpactTitle>Educational Impact:</ImpactTitle>
               <ImpactList>
                 {trend.impacts.map((impact, impactIndex) => (
                   <ImpactItem key={impactIndex}>{impact}</ImpactItem>
