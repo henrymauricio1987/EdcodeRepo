@@ -8,6 +8,7 @@ const FooterContainer = styled.footer`
   text-align: center;
   margin-top: auto;
   width: 100vw;
+  max-width: 100vw;
   box-sizing: border-box;
 `;
 

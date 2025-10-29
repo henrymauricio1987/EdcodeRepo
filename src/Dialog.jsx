@@ -12,10 +12,10 @@ const images = {
 
 // Colores según tipo de diálogo
 const colors = {
-    error: '#f6bed7',
-    info: '#bec7f6',
-    success: '#bef6c5',
-    warning: '#f6eebc',
+    error: '#E74C3C',
+    info: '#3498DB',
+    success: '#2ECC71',
+    warning: '#F1C40F',
 };
 
 export function Dialog({ children, kind = 'info' }) {

@@ -8,7 +8,9 @@ const HeaderContainer = styled.header`
   text-align: center;
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
 
   &::before {
     content: '';

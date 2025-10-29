@@ -2,18 +2,18 @@ import { createGlobalStyle } from 'styled-components';
 
 export const theme = {
   colors: {
-    primary: '#FF6B6B', // Coral red for energy
-    secondary: '#4ECDC4', // Teal for calm
-    accent: '#45B7D1', // Sky blue for creativity
-    playful: '#FFA07A', // Light salmon for fun
+    primary: '#0094C9', // Azul principal
+    secondary: '#3498DB', // Azul claro
+    accent: '#2ECC71', // Verde claro
+    playful: '#F1C40F', // Amarillo
     background: '#FFFFFF',
-    text: '#2C3E50',
-    lightGray: '#F8F9FA',
+    text: '#000000',
+    lightGray: '#2C3E50',
     white: '#FFFFFF',
-    subtleGray: '#F1F3F4',
+    subtleGray: '#2C3E50',
     cardBg: '#FFFFFF',
-    gradientStart: '#FF6B6B',
-    gradientEnd: '#4ECDC4',
+    gradientStart: '#0094C9',
+    gradientEnd: '#2ECC71',
   },
   fonts: {
     heading: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
@@ -43,6 +43,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     width: 100vw;
+    max-width: 100vw;
     overflow-x: hidden;
   }
 

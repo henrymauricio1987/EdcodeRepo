@@ -21,16 +21,20 @@ function App() {
         display: 'flex',
         flexDirection: 'column',
         width: '100vw',
+        maxWidth: '100vw',
         margin: 0,
-        padding: 0
+        padding: 0,
+        overflowX: 'hidden'
       }}>
         <Header />
         <NavBar />
         <main style={{
           flex: 1,
           width: '100vw',
+          maxWidth: '100vw',
           margin: 0,
-          padding: 0
+          padding: 0,
+          overflowX: 'hidden'
         }}>
           <Routes>
             <Route path="/" element={<Home />} />

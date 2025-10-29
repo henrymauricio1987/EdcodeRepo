@@ -4,34 +4,50 @@ import { motion } from 'framer-motion';
 import { FaEnvelope, FaUser, FaPaperPlane } from 'react-icons/fa';
 
 const ContactContainer = styled.div`
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 4rem;
   width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
+  background: ${props => props.theme.colors.background};
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    padding: 3rem 1rem;
+    padding: 1rem 0.5rem;
   }
 `;
 
 const Title = styled(motion.h1)`
   color: ${props => props.theme.colors.text};
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 600;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const Form = styled(motion.form)`
   background: ${props => props.theme.colors.white};
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border: 1px solid ${props => props.theme.colors.lightGray};
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     padding: 1.5rem;
+    margin: 0 0.5rem;
+    max-width: 100%;
   }
 `;
 

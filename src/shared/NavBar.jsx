@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { FaHome, FaInfoCircle, FaBook, FaTools, FaRobot, FaEnvelope } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaBook, FaTools, FaRobot, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
+import { useState } from 'react';
 
 const NavContainer = styled.nav`
   background: ${props => props.theme.colors.white};
   border-bottom: 1px solid ${props => props.theme.colors.lightGray};
   padding: 0;
   width: 100vw;
+  max-width: 100vw;
   display: flex;
   justify-content: center;
   margin: 0;
@@ -21,7 +23,18 @@ const NavList = styled.ul`
   justify-content: center;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: ${props => props.theme.colors.white};
+    z-index: 1000;
+    transform: translateX(${props => props.isOpen ? '0' : '-100%'});
+    transition: transform 0.3s ease;
   }
 `;
 
@@ -51,53 +64,97 @@ const StyledNavLink = styled(NavLink)`
   }
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    padding: 0.625rem 0.75rem;
-    font-size: 0.8125rem;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    width: 100%;
+    justify-content: center;
+    border-bottom: none;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+
+    &:hover {
+      background-color: ${props => props.theme.colors.lightGray};
+    }
+
+    &.active {
+      background-color: ${props => props.theme.colors.primary};
+      color: ${props => props.theme.colors.white};
+      border-bottom: none;
+    }
+  }
+`;
+
+const HamburgerButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: ${props => props.theme.colors.text};
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
   }
 `;
 
 const NavBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  const closeMenu = () => setIsOpen(false);
+
   return (
-    <NavContainer>
-      <NavList>
-        <NavItem>
-          <StyledNavLink to="/" end>
-            <FaHome />
-            Home
-          </StyledNavLink>
-        </NavItem>
-        <NavItem>
-          <StyledNavLink to="/about">
-            <FaInfoCircle />
-            About
-          </StyledNavLink>
-        </NavItem>
-        <NavItem>
-          <StyledNavLink to="/methodologies">
-            <FaBook />
-            Methodologies
-          </StyledNavLink>
-        </NavItem>
-        <NavItem>
-          <StyledNavLink to="/resources">
-            <FaTools />
-            Resources
-          </StyledNavLink>
-        </NavItem>
-        <NavItem>
-          <StyledNavLink to="/technology">
-            <FaRobot />
-            Technology
-          </StyledNavLink>
-        </NavItem>
-        <NavItem>
-          <StyledNavLink to="/contact">
-            <FaEnvelope />
-            Contact
-          </StyledNavLink>
-        </NavItem>
-      </NavList>
-    </NavContainer>
+    <>
+      <HamburgerButton onClick={toggleMenu}>
+        {isOpen ? <FaTimes /> : <FaBars />}
+      </HamburgerButton>
+      <NavContainer>
+        <NavList isOpen={isOpen}>
+          <NavItem>
+            <StyledNavLink to="/" end onClick={closeMenu}>
+              <FaHome />
+              Home
+            </StyledNavLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavLink to="/about" onClick={closeMenu}>
+              <FaInfoCircle />
+              About
+            </StyledNavLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavLink to="/methodologies" onClick={closeMenu}>
+              <FaBook />
+              Methodologies
+            </StyledNavLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavLink to="/resources" onClick={closeMenu}>
+              <FaTools />
+              Resources
+            </StyledNavLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavLink to="/technology" onClick={closeMenu}>
+              <FaRobot />
+              Technology
+            </StyledNavLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavLink to="/contact" onClick={closeMenu}>
+              <FaEnvelope />
+              Contact
+            </StyledNavLink>
+          </NavItem>
+        </NavList>
+      </NavContainer>
+    </>
   );
 };
 

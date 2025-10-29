@@ -7,6 +7,7 @@ const HomeContainer = styled.div`
   text-align: center;
   padding: 5rem;
   width: 100vw;
+  max-width: 100vw;
   margin: 0;
   box-sizing: border-box;
 
