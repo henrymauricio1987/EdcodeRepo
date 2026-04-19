@@ -11,7 +11,7 @@ const SectionContainer = styled.section`
     padding: 2.5rem 1rem;
   }
 `;
-
+//
 const SectionHeader = styled.div`
   text-align: center;
   max-width: 700px;
